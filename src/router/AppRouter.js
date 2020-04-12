@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import MovieGallery from "./components/MovieGallery";
-import Movie from "./components/Movie";
+import MovieGallery from "../components/MovieGallery";
+import Movie from "../components/Movie";
 
-function App() {
+function AppRouter() {
   return (
     <Router>
       <div className="wrapper">
@@ -20,4 +20,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppRouter;

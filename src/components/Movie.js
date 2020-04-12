@@ -17,6 +17,7 @@ const Movie = () => {
 
   return (
     <div>
+      <img src={movie.backdrop_path} alt={movie.title} />
       <h2>{movie.title}</h2>
       <p>{movie.overview}</p>
       <Link to="/">Back to Movies</Link>

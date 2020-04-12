@@ -34,8 +34,16 @@ export function getMovie(id) {
         revenue: data.revenue,
         language: data.original_language,
         production_companies: data.production_companies,
-        poster_path: data.poster_path,
-        backdrop_path: data.backdrop_path,
+        backdrop_path:
+          config.images.secure_base_url +
+          config.images.backdrop_sizes[2] +
+          "/" +
+          data.backdrop_path,
+        poster_path:
+          config.images.secure_base_url +
+          config.images.poster_sizes[2] +
+          "/" +
+          data.poster_path,
         genres: data.genres,
       };
       return movie;
@@ -50,9 +58,9 @@ export function getMovie(id) {
 export function getMovies(order, page) {
   let url = "";
   switch (order) {
-    case "np":
-      url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${key}&page=${page}`;
-      break;
+    // case "np":
+    //   url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${key}&page=${page}`;
+    //   break;
     case "p":
       url = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&page=${page}`;
       break;
@@ -80,9 +88,8 @@ export function getMovies(order, page) {
       let cleanResults = results.map((movieInfo) => {
         let movie = {
           id: movieInfo.id,
-          backdrop_path: movieInfo.backdrop_path,
           poster_path:
-            config.images.base_url +
+            config.images.secure_base_url +
             config.images.poster_sizes[2] +
             "/" +
             movieInfo.poster_path,
