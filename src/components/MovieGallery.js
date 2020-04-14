@@ -10,9 +10,9 @@ class MovieGallery extends Component {
     movies: null,
   };
 
-  componentDidMount() {
+  componentDidMount = () => {
     this.getMovies();
-  }
+  };
 
   getMovies = async () => {
     const movies = await getMovies(this.state.sortOrder, 1);
@@ -34,28 +34,6 @@ class MovieGallery extends Component {
           <SortOrder updateSortOrder={this.handleSortUpdate} />
           {this.state.movies.map((movie) => (
             <Poster key={movie.id} movie={movie} />
-            // <div key={movie.id} className="poster">
-            //   <Link to={"/movie/" + movie.id}>
-            //     <img src={movie.poster_path} alt={movie.title} />
-            //   </Link>
-            //   {this.isStored(movie.id) ? (
-            //     <button
-            //       onClick={() => {
-            //         this.removeFromStorage(movie.id);
-            //       }}
-            //     >
-            //       Remove
-            //     </button>
-            //   ) : (
-            //     <button
-            //       onClick={() => {
-            //         this.addToStorage(movie);
-            //       }}
-            //     >
-            //       Add
-            //     </button>
-            //   )}
-            // </div>
           ))}
         </div>
       );
