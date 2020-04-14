@@ -8,12 +8,14 @@ const Movie = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const movie = await getMovie(id);
+      const movie = await getMovie(id).catch((error) => {
+        console.log(error);
+      });
       setMovie(movie);
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <div>

@@ -12,45 +12,80 @@ const config = {
 
 const key = "a3922856eb59dc0a86a6849412c18182";
 
-export function getMovie(id) {
+// export function getMovie(id) {
+//   let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
+//   return fetch(url)
+//     .then((res) => {
+//       if (!res.ok) {
+//         throw Error(res.statusText);
+//       } else {
+//         return res.json();
+//       }
+//     })
+//     .then((data) => {
+//       let movie = {
+//         id: data.id,
+//         title: data.title,
+//         tagline: data.tagline,
+//         overview: data.overview,
+//         runtime: data.runtime,
+//         release_date: data.release_date,
+//         budget: data.budget,
+//         revenue: data.revenue,
+//         language: data.original_language,
+//         production_companies: data.production_companies,
+//         backdrop_path:
+//           config.images.secure_base_url +
+//           config.images.backdrop_sizes[2] +
+//           "/" +
+//           data.backdrop_path,
+//         poster_path:
+//           config.images.secure_base_url +
+//           config.images.poster_sizes[2] +
+//           "/" +
+//           data.poster_path,
+//         genres: data.genres,
+//       };
+//       return movie;
+//     })
+//     .catch((error) => {
+//       console.log(error);
+//     });
+// }
+
+export async function getMovie(id) {
   let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
-  return fetch(url)
-    .then((res) => {
-      if (!res.ok) {
-        throw Error(res.statusText);
-      } else {
-        return res.json();
-      }
-    })
-    .then((data) => {
-      let movie = {
-        id: data.id,
-        title: data.title,
-        tagline: data.tagline,
-        overview: data.overview,
-        runtime: data.runtime,
-        release_date: data.release_date,
-        budget: data.budget,
-        revenue: data.revenue,
-        language: data.original_language,
-        production_companies: data.production_companies,
-        backdrop_path:
-          config.images.secure_base_url +
-          config.images.backdrop_sizes[2] +
-          "/" +
-          data.backdrop_path,
-        poster_path:
-          config.images.secure_base_url +
-          config.images.poster_sizes[2] +
-          "/" +
-          data.poster_path,
-        genres: data.genres,
-      };
-      return movie;
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  let res = await fetch(url);
+
+  if (res.status === 200) {
+    let data = await res.json();
+    let movie = {
+      id: data.id,
+      title: data.title,
+      tagline: data.tagline,
+      overview: data.overview,
+      runtime: data.runtime,
+      release_date: data.release_date,
+      budget: data.budget,
+      revenue: data.revenue,
+      language: data.original_language,
+      production_companies: data.production_companies,
+      backdrop_path:
+        config.images.secure_base_url +
+        config.images.backdrop_sizes[2] +
+        "/" +
+        data.backdrop_path,
+      poster_path:
+        config.images.secure_base_url +
+        config.images.poster_sizes[2] +
+        "/" +
+        data.poster_path,
+      genres: data.genres,
+    };
+    return movie;
+  }
+
+  throw new Error(res.statusText);
 }
 
 //now playing, popular, top rated, upcoming
@@ -58,9 +93,6 @@ export function getMovie(id) {
 export function getMovies(order, page) {
   let url = "";
   switch (order) {
-    // case "np":
-    //   url = `https://api.themoviedb.org/3/movie/now_playing?api_key=${key}&page=${page}`;
-    //   break;
     case "p":
       url = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&page=${page}`;
       break;
