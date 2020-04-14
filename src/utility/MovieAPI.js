@@ -49,7 +49,7 @@ export async function getMovie(id) {
 
 //now playing, popular, top rated, upcoming
 //currently only returns 1 page (20 movies)
-export function getMovies(order, page) {
+export async function getMovies(order, page) {
   let url = "";
   switch (order) {
     case "p":
@@ -66,34 +66,27 @@ export function getMovies(order, page) {
       break;
   }
 
-  return fetch(url)
-    .then((res) => {
-      if (!res.ok) {
-        throw Error(res.statusText);
-      } else {
-        return res.json();
-      }
-    })
-    .then((data) => {
-      let results = data.results;
-      let cleanResults = results.map((movieInfo) => {
-        let movie = {
-          id: movieInfo.id,
-          poster_path:
-            config.images.secure_base_url +
-            config.images.poster_sizes[2] +
-            "/" +
-            movieInfo.poster_path,
-          title: movieInfo.title,
-          overview: movieInfo.overview,
-          release_date: movieInfo.release_date,
-          genre_ids: movieInfo.genre_ids,
-        };
-        return movie;
-      });
-      return cleanResults;
-    })
-    .catch((error) => {
-      console.log(error);
+  let res = await fetch(url);
+  if (res.status === 200) {
+    let data = await res.json();
+    let results = data.results;
+    let cleanResults = results.map((movieInfo) => {
+      let movie = {
+        id: movieInfo.id,
+        poster_path:
+          config.images.secure_base_url +
+          config.images.poster_sizes[2] +
+          "/" +
+          movieInfo.poster_path,
+        title: movieInfo.title,
+        overview: movieInfo.overview,
+        release_date: movieInfo.release_date,
+        genre_ids: movieInfo.genre_ids,
+      };
+      return movie;
     });
+    return cleanResults;
+  }
+
+  throw new Error(res.statusText);
 }
