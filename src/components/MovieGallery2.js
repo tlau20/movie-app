@@ -20,18 +20,16 @@ class MovieGallery2 extends Component {
   };
 
   componentDidMount = () => {
-    this.getMovies();
+    this.loadMovies();
   };
 
-  getMovies = async () => {
+  loadMovies = async () => {
     let npMovies = [];
     let pMovies = [];
     let trMovies = [];
     let uMovies = [];
 
-    let newFetch = checkLastFetch();
-
-    if (newFetch) {
+    if (checkLastFetch()) {
       console.log("fetching...");
       await Promise.all([
         (npMovies = await getMovies("np", 1)),
