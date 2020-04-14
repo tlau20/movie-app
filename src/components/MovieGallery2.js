@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { getMovies } from "../utility/MovieAPI.js";
+import {
+  setMovieList,
+  checkLastFetch,
+  setLastFetch,
+} from "../utility/Utilities.js";
 import SortOrder from "./SortOrder.js";
 import Poster from "./Poster.js";
 
@@ -15,20 +20,43 @@ class MovieGallery2 extends Component {
   };
 
   componentDidMount = () => {
-    if (this.state.movies === null) {
-      this.getMovies();
-    }
+    this.getMovies();
   };
 
   getMovies = async () => {
-    const movies = await getMovies(this.state.sortOrder, 1);
-    console.log(movies);
-    const npMovies = [...movies];
-    const pMovies = await getMovies("p", 1);
-    const trMovies = await getMovies("tr", 1);
-    const uMovies = await getMovies("u", 1);
+    let npMovies = [];
+    let pMovies = [];
+    let trMovies = [];
+    let uMovies = [];
+
+    let newFetch = checkLastFetch();
+
+    if (newFetch) {
+      console.log("fetching...");
+      await Promise.all([
+        (npMovies = await getMovies("np", 1)),
+        (pMovies = await getMovies("p", 1)),
+        (trMovies = await getMovies("tr", 1)),
+        (uMovies = await getMovies("u", 1)),
+      ]).catch((error) => {
+        console.log(error);
+      });
+
+      setMovieList(npMovies);
+      setMovieList(pMovies, "p");
+      setMovieList(trMovies, "tr");
+      setMovieList(uMovies, "u");
+      setLastFetch();
+    } else {
+      console.log("local storage...");
+      npMovies = JSON.parse(localStorage.getItem("np"));
+      pMovies = JSON.parse(localStorage.getItem("p"));
+      trMovies = JSON.parse(localStorage.getItem("tr"));
+      uMovies = JSON.parse(localStorage.getItem("u"));
+    }
+
     this.setState({
-      movies: movies,
+      movies: npMovies,
       npMovies: npMovies,
       pMovies: pMovies,
       trMovies: trMovies,
