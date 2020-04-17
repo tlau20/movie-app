@@ -27,7 +27,7 @@ const WatchLaterButton = ({ movie }) => {
   return (
     <div>
       <button onClick={handleClick}>
-        {watchLater ? "Remove from list" : "Add to list"}
+        {watchLater ? "Remove from watchlist" : "Add to watchlist"}
       </button>
     </div>
   );

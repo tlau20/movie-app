@@ -13,12 +13,12 @@ const config = {
 const key = "a3922856eb59dc0a86a6849412c18182";
 
 export async function getMovie(id) {
-  let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
-  let res = await fetch(url);
+  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
+  const res = await fetch(url);
 
   if (res.status === 200) {
-    let data = await res.json();
-    let movie = {
+    const data = await res.json();
+    const movie = {
       id: data.id,
       title: data.title,
       tagline: data.tagline,
@@ -66,11 +66,10 @@ export async function getMovies(order, page) {
       break;
   }
 
-  let res = await fetch(url);
+  const res = await fetch(url);
   if (res.status === 200) {
-    let data = await res.json();
-    let results = data.results;
-    let cleanResults = results.map((movieInfo) => {
+    const data = await res.json();
+    const cleanResults = data.results.map((movieInfo) => {
       let movie = {
         id: movieInfo.id,
         poster_path:

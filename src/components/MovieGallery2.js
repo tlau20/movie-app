@@ -85,12 +85,16 @@ class MovieGallery2 extends Component {
       return "";
     } else {
       return (
-        <div className="movie-gallery">
-          <SortOrder updateSortOrder={this.handleSortUpdate} />
-          {this.state.movies.map((movie) => (
-            <Poster key={movie.id} movie={movie} />
-          ))}
-        </div>
+        <main>
+          <div className="sortOrder">
+            <SortOrder updateSortOrder={this.handleSortUpdate} />
+          </div>
+          <div className="movie-gallery">
+            {this.state.movies.map((movie) => (
+              <Poster key={movie.id} movie={movie} />
+            ))}
+          </div>
+        </main>
       );
     }
   }

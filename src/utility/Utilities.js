@@ -32,14 +32,6 @@ export const isStored = (movieID, storage = "favourites") => {
 };
 
 export const setMovieList = (movieList, storage = "np") => {
-  // if (!localStorage.getItem(storage)) {
-  //   const moviesToAdd = JSON.stringify(movieList);
-  //   localStorage.setItem(storage, moviesToAdd);
-  // } else {
-  //   const moviesToAdd = JSON.parse(localStorage.getItem(storage));
-  //   moviesToAdd.push(movieList);
-  //   localStorage.setItem(storage, JSON.stringify(moviesToAdd));
-  // }
   localStorage.setItem(storage, JSON.stringify(movieList));
 };
 
@@ -68,11 +60,8 @@ export function checkLastFetch() {
   let d = new Date();
   let now = d.getTime();
   let lastfetch = getCookie("lastfetch");
-  // console.log("lastfetch: ", lastfetch);
-  // console.log("now: ", now);
   if (lastfetch !== "") {
     if (+now - +lastfetch > 0) {
-      // console.log("Difference: ", +now - +lastfetch);
       return true;
     } else {
       return false;
