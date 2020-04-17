@@ -4,41 +4,33 @@ const SortOrder = (props) => {
   return (
     <div className="sortOrder">
       <ul>
-        <li>
-          <h2
-            onClick={() => {
-              props.updateSortOrder("np");
-            }}
-          >
-            Now Playing
-          </h2>
+        <li
+          onClick={() => {
+            props.updateSortOrder("np");
+          }}
+        >
+          Now Playing
         </li>
-        <li>
-          <h2
-            onClick={() => {
-              props.updateSortOrder("p");
-            }}
-          >
-            Popular
-          </h2>
+        <li
+          onClick={() => {
+            props.updateSortOrder("p");
+          }}
+        >
+          Popular
         </li>
-        <li>
-          <h2
-            onClick={() => {
-              props.updateSortOrder("tr");
-            }}
-          >
-            Top Rated
-          </h2>
+        <li
+          onClick={() => {
+            props.updateSortOrder("tr");
+          }}
+        >
+          Top Rated
         </li>
-        <li>
-          <h2
-            onClick={() => {
-              props.updateSortOrder("u");
-            }}
-          >
-            Upcoming
-          </h2>
+        <li
+          onClick={() => {
+            props.updateSortOrder("u");
+          }}
+        >
+          Upcoming
         </li>
       </ul>
     </div>
