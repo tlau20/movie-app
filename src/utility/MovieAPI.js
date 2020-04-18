@@ -74,7 +74,7 @@ export async function getMovies(order, page) {
         id: movieInfo.id,
         poster_path:
           config.images.secure_base_url +
-          config.images.poster_sizes[2] +
+          config.images.poster_sizes[3] +
           "/" +
           movieInfo.poster_path,
         title: movieInfo.title,

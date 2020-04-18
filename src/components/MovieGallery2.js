@@ -85,9 +85,7 @@ class MovieGallery2 extends Component {
     } else {
       return (
         <main>
-          <div className="sortOrder">
-            <SortOrder updateSortOrder={this.handleSortUpdate} />
-          </div>
+          <SortOrder updateSortOrder={this.handleSortUpdate} />
           <div className="movie-gallery">
             {this.state.movies.map((movie) => (
               <Poster key={movie.id} movie={movie} />
