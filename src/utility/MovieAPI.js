@@ -31,15 +31,17 @@ export async function getMovie(id) {
       production_companies: data.production_companies,
       backdrop_path:
         config.images.secure_base_url +
-        config.images.backdrop_sizes[2] +
+        config.images.backdrop_sizes[3] +
         "/" +
         data.backdrop_path,
       poster_path:
         config.images.secure_base_url +
-        config.images.poster_sizes[2] +
+        config.images.poster_sizes[3] +
         "/" +
         data.poster_path,
       genres: data.genres,
+      rating: data.vote_average,
+      tagline: data.tagline,
     };
     return movie;
   }

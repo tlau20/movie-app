@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { getMovie } from "../utility/MovieAPI";
 import FavButton from "./FavButton";
 import WatchLaterButton from "./WatchLaterButton";
@@ -23,18 +23,34 @@ const Movie = () => {
   }, [id]);
 
   return (
-    <div>
-      <img src={movie.backdrop_path} alt={movie.title} />
-      <h2>{movie.title}</h2>
-      <p>{movie.overview}</p>
-      <p>{movie.runtime} min</p>
-      {/* <p>{movie.release_date}</p>
+    <div className="movie">
+      <div className="backdrop-wrapper">
+        <img src={movie.backdrop_path} alt={movie.title} />
+      </div>
+      <div className="poster-wrapper">
+        <img src={movie.poster_path} alt={movie.title} />
+      </div>
+      <div className="movie-info">
+        <div className="movie-title">
+          <h2>{movie.title}</h2>
+          <h2>{movie.rating}</h2>
+        </div>
+        <div className="movie-details">
+          <p>{movie.runtime} min</p>
+          <p>{genres.join(", ")}</p>
+          <FavButton movie={movie} />
+          <WatchLaterButton movie={movie} />
+        </div>
+        <div className="movie-overview">
+          {movie.tagline ? <p>- {movie.tagline} -</p> : ""}
+          <p>{movie.overview}</p>
+        </div>
+        {/* <p>{movie.release_date}</p>
       <p>{movie.budget}</p>
       <p>{movie.revenue}</p> */}
-      <p>{genres.join(", ")}</p>
-      <FavButton movie={movie} />
-      <WatchLaterButton movie={movie} />
-      <Link to="/">Back to Movies</Link>
+        <div className="fav-watchlist-btn"></div>
+        {/* <Link to="/">Back to Movies</Link> */}
+      </div>
     </div>
   );
 };
