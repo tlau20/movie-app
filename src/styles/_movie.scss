@@ -22,9 +22,11 @@
     align-items: flex-end;
   }
   .movie-info {
+    padding-top: 40px;
+    width: 80%;
+    justify-self: center;
     grid-column: 3 / 4;
     grid-row: 3 / 4;
-    padding: 30px 0 0 40px;
     font-size: 1em;
     display: flex;
     flex-direction: column;
@@ -36,12 +38,12 @@
     a,
     button {
       font-size: 1.2em;
-      line-height: 1.4em;
+      line-height: 1.5em;
     }
     .movie-title {
       display: flex;
       justify-content: space-between;
-      width: 60%;
+      // width: 60%;
     }
     .movie-details {
       font-size: 1em;
@@ -53,7 +55,6 @@
       }
     }
     .movie-overview {
-      width: 75%;
     }
   }
 }

@@ -48,7 +48,7 @@ const Movie = () => {
         {/* <p>{movie.release_date}</p>
       <p>{movie.budget}</p>
       <p>{movie.revenue}</p> */}
-        <div className="fav-watchlist-btn"></div>
+        {/* <div className="fav-watchlist-btn"></div> */}
         {/* <Link to="/">Back to Movies</Link> */}
       </div>
     </div>
