@@ -1,6 +1,6 @@
 .movie {
   display: grid;
-  grid-template-columns: 60px auto auto;
+  grid-template-columns: 60px 350px auto;
   grid-template-rows: 250px 250px auto;
   overflow: hidden;
   .backdrop-wrapper {
