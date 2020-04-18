@@ -41,7 +41,6 @@ export async function getMovie(id) {
         data.poster_path,
       genres: data.genres,
       rating: data.vote_average,
-      tagline: data.tagline,
     };
     return movie;
   }
