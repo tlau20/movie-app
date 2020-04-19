@@ -17,6 +17,7 @@ const Movie = () => {
       const genres = movie.genres.map((genre) => genre.name);
       setGenres(genres);
       setMovie(movie);
+      console.log(movie.trailer);
     };
 
     fetchData();
@@ -33,7 +34,7 @@ const Movie = () => {
       <div className="movie-info">
         <div className="movie-title">
           <h2>{movie.title}</h2>
-          <h2>{movie.rating}</h2>
+          <h2 id="rating">{movie.rating}</h2>
         </div>
         <div className="movie-details">
           <p>{movie.runtime} min</p>
@@ -47,7 +48,7 @@ const Movie = () => {
         </div>
         {/* <p>{movie.release_date}</p>
       <p>{movie.budget}</p>
-      <p>{movie.revenue}</p> */}
+    <p>{movie.revenue}</p> */}
         {/* <div className="fav-watchlist-btn"></div> */}
         {/* <Link to="/">Back to Movies</Link> */}
       </div>

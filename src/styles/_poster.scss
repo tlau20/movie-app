@@ -7,6 +7,10 @@
   .posterimg {
     img {
       border-radius: 10px;
+      height: 100%;
+      width: 100%;
+      object-fit: fill;
+      box-shadow: 1px 1px 1px #b1b1b1;
     }
   }
 }

@@ -16,6 +16,23 @@ export async function getMovie(id) {
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
   const res = await fetch(url);
 
+  const trailer_url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=a3922856eb59dc0a86a6849412c18182&language=en-US`;
+  const response = await fetch(trailer_url);
+
+  let trailer = "";
+  if (response.status === 200) {
+    const data = await response.json();
+    for (let i = 0; i < data.results.length; i++) {
+      if (
+        data.results[i].type === "Trailer" &&
+        data.results[i].site === "YouTube"
+      ) {
+        trailer = `https://www.youtube.com/watch?v=${data.results[i].key}`;
+        // trailer = data.results[i].key;
+      }
+    }
+  }
+
   if (res.status === 200) {
     const data = await res.json();
     const movie = {
@@ -41,6 +58,7 @@ export async function getMovie(id) {
         data.poster_path,
       genres: data.genres,
       rating: data.vote_average,
+      trailer: trailer,
     };
     return movie;
   }

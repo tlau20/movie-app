@@ -46,6 +46,13 @@
     .movie-title {
       display: flex;
       justify-content: space-between;
+      #rating {
+        padding: 0 10px;
+        // border: 1px solid #333333;
+        background-color: #333;
+        border-radius: 8px;
+        color: #fafafa;
+      }
     }
     .movie-details {
       font-size: 1em;
@@ -55,8 +62,6 @@
       & > * {
         padding-right: 50px;
       }
-    }
-    .movie-overview {
     }
   }
 }
