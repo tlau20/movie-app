@@ -27,6 +27,7 @@ class MovieGallery2 extends Component {
     let pMovies = [];
     let trMovies = [];
     let uMovies = [];
+    let sortOrder = localStorage.getItem("sortOrder");
 
     if (checkLastFetch()) {
       console.log("fetching...");
@@ -50,6 +51,12 @@ class MovieGallery2 extends Component {
       pMovies = JSON.parse(localStorage.getItem("p"));
       trMovies = JSON.parse(localStorage.getItem("tr"));
       uMovies = JSON.parse(localStorage.getItem("u"));
+    }
+
+    if (sortOrder) {
+      this.setState({ sortOrder: sortOrder }, () => {
+        this.handleSortUpdate(sortOrder);
+      });
     }
 
     this.setState({
@@ -76,6 +83,7 @@ class MovieGallery2 extends Component {
         this.setState({ movies: this.state.npMovies });
         break;
     }
+    localStorage.setItem("sortOrder", order);
     this.setState({ sortOrder: order });
   };
 
@@ -85,7 +93,10 @@ class MovieGallery2 extends Component {
     } else {
       return (
         <main>
-          <SortOrder updateSortOrder={this.handleSortUpdate} />
+          <SortOrder
+            updateSortOrder={this.handleSortUpdate}
+            sortOrder={this.state.sortOrder}
+          />
           <div className="movie-gallery">
             {this.state.movies.map((movie) => (
               <Poster key={movie.id} movie={movie} />

@@ -8,6 +8,7 @@ const SortOrder = (props) => {
           onClick={() => {
             props.updateSortOrder("np");
           }}
+          className={props.sortOrder === "np" ? "active" : undefined}
         >
           Now Playing
         </li>
@@ -15,6 +16,7 @@ const SortOrder = (props) => {
           onClick={() => {
             props.updateSortOrder("p");
           }}
+          className={props.sortOrder === "p" ? "active" : undefined}
         >
           Popular
         </li>
@@ -22,6 +24,7 @@ const SortOrder = (props) => {
           onClick={() => {
             props.updateSortOrder("tr");
           }}
+          className={props.sortOrder === "tr" ? "active" : undefined}
         >
           Top Rated
         </li>
@@ -29,6 +32,7 @@ const SortOrder = (props) => {
           onClick={() => {
             props.updateSortOrder("u");
           }}
+          className={props.sortOrder === "u" ? "active" : undefined}
         >
           Upcoming
         </li>

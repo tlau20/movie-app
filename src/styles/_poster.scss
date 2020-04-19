@@ -1,7 +1,12 @@
 .poster {
-  .poster-title {
-    margin-top: 10px;
-    font-weight: bold;
-    font-size: 1.2em;
+  // .poster-title {
+  //   margin-top: 10px;
+  //   font-weight: bold;
+  //   font-size: 1.2em;
+  // }
+  .posterimg {
+    img {
+      border-radius: 10px;
+    }
   }
 }

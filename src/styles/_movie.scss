@@ -1,8 +1,11 @@
 .movie {
   display: grid;
   grid-template-columns: 60px 350px auto;
-  grid-template-rows: 250px 250px auto;
+  grid-template-rows: 250px 250px auto auto;
   overflow: hidden;
+  img {
+    border-radius: 15px;
+  }
   .backdrop-wrapper {
     grid-column: 1 / 4;
     grid-row: 1 / 3;
@@ -23,14 +26,14 @@
   }
   .movie-info {
     padding-top: 40px;
-    width: 80%;
+    width: 90%;
     justify-self: center;
     grid-column: 3 / 4;
-    grid-row: 3 / 4;
+    grid-row: 3 / 5;
     font-size: 1em;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
     h2 {
       font-size: 2.5em;
     }
@@ -43,7 +46,6 @@
     .movie-title {
       display: flex;
       justify-content: space-between;
-      // width: 60%;
     }
     .movie-details {
       font-size: 1em;
