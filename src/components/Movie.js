@@ -17,7 +17,6 @@ const Movie = () => {
       const genres = movie.genres.map((genre) => genre.name);
       setGenres(genres);
       setMovie(movie);
-      console.log(movie.trailer);
     };
 
     fetchData();
@@ -34,7 +33,7 @@ const Movie = () => {
       <div className="movie-info">
         <div className="movie-title">
           <h2>{movie.title}</h2>
-          <h2 id="rating">{movie.rating}</h2>
+          <h2 id="rating">{parseFloat(movie.rating).toFixed(1)}</h2>
         </div>
         <div className="movie-details">
           <p>{movie.runtime} min</p>
