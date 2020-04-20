@@ -16,10 +16,12 @@ const Favourites = () => {
       {favs === null ? (
         <h2>No favourites</h2>
       ) : (
-        <div className="movie-gallery">
-          {favs.map((movie) => (
-            <Poster key={movie.id} movie={movie} />
-          ))}
+        <div className="movie-grid-wrapper">
+          <div className="movie-gallery">
+            {favs.map((movie) => (
+              <Poster key={movie.id} movie={movie} />
+            ))}
+          </div>
         </div>
       )}
     </div>

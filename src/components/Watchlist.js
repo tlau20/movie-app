@@ -16,10 +16,12 @@ const Watchlist = () => {
       {list === null ? (
         <h2>Watchlist is empty</h2>
       ) : (
-        <div className="movie-gallery">
-          {list.map((movie) => (
-            <Poster key={movie.id} movie={movie} />
-          ))}
+        <div className="movie-grid-wrapper">
+          <div className="movie-gallery">
+            {list.map((movie) => (
+              <Poster key={movie.id} movie={movie} />
+            ))}
+          </div>
         </div>
       )}
     </div>
