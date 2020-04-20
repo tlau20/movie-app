@@ -14,23 +14,25 @@ function AppRouter() {
     <Router>
       <div className="wrapper">
         <Header />
-        <Switch>
-          <Route path="/" exact>
-            <MovieGallery2 />
-          </Route>
-          <Route path="/movie/:id">
-            <Movie />
-          </Route>
-          <Route path="/about">
-            <About />
-          </Route>
-          <Route path="/favourites">
-            <Favourites />
-          </Route>
-          <Route path="/watchlist">
-            <Watchlist />
-          </Route>
-        </Switch>
+        <main>
+          <Switch>
+            <Route path="/" exact>
+              <MovieGallery2 />
+            </Route>
+            <Route path="/movie/:id">
+              <Movie />
+            </Route>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/favourites">
+              <Favourites />
+            </Route>
+            <Route path="/watchlist">
+              <Watchlist />
+            </Route>
+          </Switch>
+        </main>
       </div>
     </Router>
   );

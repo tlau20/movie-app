@@ -12,7 +12,7 @@ const Favourites = () => {
   }, []);
 
   return (
-    <main>
+    <div>
       {favs === null ? (
         <h2>No favourites</h2>
       ) : (
@@ -22,7 +22,7 @@ const Favourites = () => {
           ))}
         </div>
       )}
-    </main>
+    </div>
   );
 };
 

@@ -1,6 +1,8 @@
 header {
+  width: 100%;
   line-height: 50px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   .logo {
@@ -9,13 +11,48 @@ header {
       display: block;
     }
   }
+  .menu-btn {
+    padding-right: 20px;
+    cursor: pointer;
+    img {
+      height: 25px;
+    }
+  }
   .navbar {
+    z-index: 1;
+    display: none;
+    width: 100%;
+    .show & {
+      display: block;
+    }
     ul {
-      display: flex;
-      li a {
-        display: block;
-        padding: 0 20px;
+      width: 100%;
+      position: absolute;
+      li {
+        padding-left: 20px;
+        background-color: #333;
       }
+    }
+  }
+}
+//desktop styles
+@media (min-width: 1200px) {
+  header {
+    flex-wrap: nowrap;
+    .navbar {
+      display: flex;
+      width: min-content;
+      ul {
+        display: flex;
+        position: relative;
+        li {
+          padding: 0 20px;
+          background-color: transparent;
+        }
+      }
+    }
+    .menu-btn {
+      display: none;
     }
   }
 }

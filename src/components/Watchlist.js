@@ -12,7 +12,7 @@ const Watchlist = () => {
   }, []);
 
   return (
-    <main>
+    <div>
       {list === null ? (
         <h2>Watchlist is empty</h2>
       ) : (
@@ -22,7 +22,7 @@ const Watchlist = () => {
           ))}
         </div>
       )}
-    </main>
+    </div>
   );
 };
 
