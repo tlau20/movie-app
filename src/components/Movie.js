@@ -40,9 +40,13 @@ const Movie = () => {
           </div>
         </div>
         <div className="movie-details">
-          <p>{movie.runtime} min</p>
-          <p>{genres.join(", ")}</p>
-          <p>{movie.release_date}</p>
+          <p>
+            {movie.language}&nbsp;&nbsp;|&nbsp;&nbsp;{movie.runtime}{" "}
+            min&nbsp;&nbsp;|&nbsp;&nbsp;{genres.join(", ")}
+            &nbsp;&nbsp;|&nbsp;&nbsp;{movie.release_date}
+          </p>
+          {/* <p>{genres.join(", ")}</p>
+          <p>{movie.release_date}</p> */}
         </div>
         <div className="movie-overview">
           {movie.tagline ? <p>- {movie.tagline} -</p> : ""}

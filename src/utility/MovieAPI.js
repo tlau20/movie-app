@@ -47,7 +47,7 @@ export async function getMovie(id) {
       release_date: date.toDateString().split(" ").slice(1).join(" "),
       budget: data.budget,
       revenue: data.revenue,
-      language: data.original_language,
+      language: data.original_language.toUpperCase(),
       production_companies: data.production_companies,
       backdrop_path:
         config.images.secure_base_url +
