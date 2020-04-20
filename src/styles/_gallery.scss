@@ -1,6 +1,7 @@
 .movie-grid-wrapper {
   max-width: 1600px;
   margin: 0 auto;
+  padding-bottom: 20px;
   .movie-gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
