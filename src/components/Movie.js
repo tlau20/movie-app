@@ -31,9 +31,13 @@ const Movie = () => {
         <img src={movie.poster_path} alt={movie.title} />
       </div>
       <div className="movie-info">
-        <div className="movie-title">
-          <h2>{movie.title}</h2>
-          <h2 id="rating">{parseFloat(movie.rating).toFixed(1)}</h2>
+        <div className="movie-header">
+          <div className="movie-title">
+            <h2>{movie.title}</h2>
+          </div>
+          <div className="movie-rating">
+            <h2 id="rating">{parseFloat(movie.rating).toFixed(1)}</h2>
+          </div>
         </div>
         <div className="movie-details">
           <p>{movie.runtime} min</p>

@@ -24,10 +24,12 @@ const FavButton = ({ movie }) => {
   };
 
   return (
-    <div>
-      <button onClick={handleClick}>
-        {isFav ? "Remove from favourites" : "Favourite"}
-      </button>
+    <div className="interactive-btn">
+      <img
+        src={isFav ? "/images/unlike.png" : "/images/like.png"}
+        alt="heart"
+        onClick={handleClick}
+      />
     </div>
   );
 };

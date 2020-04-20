@@ -25,10 +25,12 @@ const WatchLaterButton = ({ movie }) => {
   };
 
   return (
-    <div>
-      <button onClick={handleClick}>
-        {watchLater ? "Remove from watchlist" : "Add to watchlist"}
-      </button>
+    <div className="interactive-btn" onClick={handleClick}>
+      <img
+        src={watchLater ? "/images/remove.png" : "/images/add.png"}
+        alt="watchlist"
+      />
+      <p>Watchlist</p>
     </div>
   );
 };
