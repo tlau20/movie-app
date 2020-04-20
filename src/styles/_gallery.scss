@@ -1,7 +1,11 @@
-.movie-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  place-items: center;
-  column-gap: 20px;
-  row-gap: 20px;
+.movie-grid-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+  .movie-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    place-items: center;
+    column-gap: 20px;
+    row-gap: 20px;
+  }
 }

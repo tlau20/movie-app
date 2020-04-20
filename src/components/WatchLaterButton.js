@@ -30,7 +30,6 @@ const WatchLaterButton = ({ movie }) => {
         src={watchLater ? "/images/remove.png" : "/images/add.png"}
         alt="watchlist"
       />
-      <p>Watchlist</p>
     </div>
   );
 };

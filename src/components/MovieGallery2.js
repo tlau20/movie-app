@@ -92,7 +92,7 @@ class MovieGallery2 extends Component {
       return "";
     } else {
       return (
-        <main>
+        <main className="movie-grid-wrapper">
           <SortOrder
             updateSortOrder={this.handleSortUpdate}
             sortOrder={this.state.sortOrder}

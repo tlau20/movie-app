@@ -35,13 +35,16 @@ export async function getMovie(id) {
 
   if (res.status === 200) {
     const data = await res.json();
+
+    let date = new Date(data.release_date);
+
     const movie = {
       id: data.id,
       title: data.title,
       tagline: data.tagline,
       overview: data.overview,
       runtime: data.runtime,
-      release_date: data.release_date,
+      release_date: date.toDateString().split(" ").slice(1).join(" "),
       budget: data.budget,
       revenue: data.revenue,
       language: data.original_language,

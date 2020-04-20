@@ -24,9 +24,9 @@ const FavButton = ({ movie }) => {
   };
 
   return (
-    <div className="interactive-btn">
+    <div className="interactive-btn like-btn">
       <img
-        src={isFav ? "/images/unlike.png" : "/images/like.png"}
+        src={isFav ? "/images/like.png" : "/images/unlike.png"}
         alt="heart"
         onClick={handleClick}
       />

@@ -42,8 +42,7 @@ const Movie = () => {
         <div className="movie-details">
           <p>{movie.runtime} min</p>
           <p>{genres.join(", ")}</p>
-          <FavButton movie={movie} />
-          <WatchLaterButton movie={movie} />
+          <p>{movie.release_date}</p>
         </div>
         <div className="movie-overview">
           {movie.tagline ? <p>- {movie.tagline} -</p> : ""}
@@ -54,6 +53,10 @@ const Movie = () => {
     <p>{movie.revenue}</p> */}
         {/* <div className="fav-watchlist-btn"></div> */}
         {/* <Link to="/">Back to Movies</Link> */}
+      </div>
+      <div className="movie-btns">
+        <FavButton movie={movie} />
+        <WatchLaterButton movie={movie} />
       </div>
     </div>
   );
