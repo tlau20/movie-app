@@ -12,9 +12,10 @@ const Poster = ({ movie }) => {
           <img src={movie.poster_path} alt={movie.title} />
         </Link>
       </div>
-      {/* <div className="poster-title"><h2>{movie.title}</h2></div> */}
-      {/* <FavButton movie={movie} />
-      <WatchLaterButton movie={movie} /> */}
+      <div className="poster-btns">
+        <FavButton movie={movie} />
+        <WatchLaterButton movie={movie} />
+      </div>
     </div>
   );
 };

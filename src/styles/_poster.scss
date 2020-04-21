@@ -1,7 +1,23 @@
 .poster {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 100px auto;
   .posterimg {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
     img {
       border-radius: 10px;
     }
+  }
+  .poster-btns {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-top: 10px;
+    padding-right: 12px;
+    width: 60px;
+    margin-left: auto;
   }
 }
