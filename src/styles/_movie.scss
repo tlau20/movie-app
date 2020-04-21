@@ -12,6 +12,7 @@
       display: block;
       object-fit: cover;
       object-position: top center;
+      border-radius: 8px;
     }
   }
   .poster-wrapper {
@@ -58,7 +59,7 @@
       font-size: 1em;
       display: flex;
       align-items: center;
-      padding: 10px 0;
+      padding: 25px 0;
       & > *:not(:last-child) {
         padding-right: 50px;
       }
@@ -97,7 +98,6 @@
     place-items: center;
     justify-content: center;
     gap: 20px;
-    padding: 0 20px;
     padding-bottom: 20px;
   }
 }

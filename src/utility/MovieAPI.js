@@ -38,7 +38,8 @@ export async function getMovie(id) {
   const response = await fetch(similar_movies);
   if (response.status === 200) {
     const data = await response.json();
-    similarMovies = data.results.splice(0, 10).map((movie) => {
+    // similarMovies = data.results.splice(0, 10).map((movie) => {
+    similarMovies = data.results.map((movie) => {
       return {
         id: movie.id,
         title: movie.title,
