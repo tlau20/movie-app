@@ -65,12 +65,19 @@ const Movie = () => {
         <FavButton movie={movie} />
         <WatchLaterButton movie={movie} />
       </div>
-      <h2 id="similar-movie-title">Similar Movies</h2>
-      <div className="movie-gallery similar-movies">
-        {similarMovies.map((m) => (
-          <Poster key={m.id} movie={m} />
-        ))}
-      </div>
+
+      {similarMovies.length > 0 && (
+        <h2 id="similar-movie-title">Similar Movies</h2>
+      )}
+      {similarMovies.length > 0 ? (
+        <div className="movie-gallery similar-movies">
+          {similarMovies.map((m) => (
+            <Poster key={m.id} movie={m} />
+          ))}
+        </div>
+      ) : (
+        ""
+      )}
     </div>
   );
 };
