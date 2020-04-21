@@ -9,6 +9,8 @@
       cursor: pointer;
       font-size: 1.2em;
       color: #a8a8a8;
+      font-family: "PT Sans", sans-serif !important;
+      font-size: 1.5em;
       &.active {
         color: $brand-color;
       }
