@@ -3,11 +3,13 @@ import { useParams } from "react-router-dom";
 import { getMovie } from "../utility/MovieAPI";
 import FavButton from "./FavButton";
 import WatchLaterButton from "./WatchLaterButton";
+import Poster from "./Poster";
 
 const Movie = () => {
   let { id } = useParams();
   const [movie, setMovie] = useState({});
   const [genres, setGenres] = useState([]);
+  const [similarMovies, setSimilarMovies] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,6 +17,7 @@ const Movie = () => {
         console.log(error);
       });
       const genres = movie.genres.map((genre) => genre.name);
+      setSimilarMovies(movie.similar_movies);
       setGenres(genres);
       setMovie(movie);
     };
@@ -61,6 +64,12 @@ const Movie = () => {
       <div className="movie-btns">
         <FavButton movie={movie} />
         <WatchLaterButton movie={movie} />
+      </div>
+      <h2 id="similar-movie-title">Similar Movies</h2>
+      <div className="movie-gallery similar-movies">
+        {similarMovies.map((m) => (
+          <Poster key={m.id} movie={m} />
+        ))}
       </div>
     </div>
   );

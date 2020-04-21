@@ -33,6 +33,24 @@ export async function getMovie(id) {
   //   }
   // }
 
+  let similarMovies = [];
+  const similar_movies = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${key}&language=en-US&page=1`;
+  const response = await fetch(similar_movies);
+  if (response.status === 200) {
+    const data = await response.json();
+    similarMovies = data.results.splice(0, 10).map((movie) => {
+      return {
+        id: movie.id,
+        title: movie.title,
+        poster_path:
+          config.images.secure_base_url +
+          config.images.poster_sizes[3] +
+          "/" +
+          movie.poster_path,
+      };
+    });
+  }
+
   if (res.status === 200) {
     const data = await res.json();
 
@@ -62,6 +80,7 @@ export async function getMovie(id) {
       genres: data.genres,
       rating: data.vote_average,
       // trailer: trailer,
+      similar_movies: similarMovies,
     };
     return movie;
   }
