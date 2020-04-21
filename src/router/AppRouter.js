@@ -8,6 +8,7 @@ import Header from "../components/Header";
 import About from "../components/About";
 import Favourites from "../components/Favourites";
 import Watchlist from "../components/Watchlist";
+import ScrollToTop from "../components/ScrollToTop";
 
 function AppRouter() {
   return (
@@ -15,23 +16,25 @@ function AppRouter() {
       <div className="wrapper">
         <Header />
         <main>
-          <Switch>
-            <Route path="/" exact>
-              <MovieGallery2 />
-            </Route>
-            <Route path="/movie/:id">
-              <Movie />
-            </Route>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/favourites">
-              <Favourites />
-            </Route>
-            <Route path="/watchlist">
-              <Watchlist />
-            </Route>
-          </Switch>
+          <ScrollToTop>
+            <Switch>
+              <Route path="/" exact>
+                <MovieGallery2 />
+              </Route>
+              <Route path="/movie/:id">
+                <Movie />
+              </Route>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/favourites">
+                <Favourites />
+              </Route>
+              <Route path="/watchlist">
+                <Watchlist />
+              </Route>
+            </Switch>
+          </ScrollToTop>
         </main>
       </div>
     </Router>
