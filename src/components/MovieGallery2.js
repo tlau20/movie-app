@@ -7,6 +7,7 @@ import {
 } from "../utility/Utilities.js";
 import SortOrder from "./SortOrder.js";
 import Poster from "./Poster.js";
+import InfiniteScroll from "react-infinite-scroll-component";
 
 class MovieGallery2 extends Component {
   state = {
@@ -87,6 +88,12 @@ class MovieGallery2 extends Component {
     this.setState({ sortOrder: order });
   };
 
+  fetchMovies = async () => {
+    const page = this.state.movies.length / 20 + 1;
+    const movies = await getMovies(this.state.sortOrder, page);
+    this.setState({ movies: this.state.movies.concat(movies) });
+  };
+
   render() {
     if (this.state.movies === null) {
       return "";
@@ -97,11 +104,17 @@ class MovieGallery2 extends Component {
             updateSortOrder={this.handleSortUpdate}
             sortOrder={this.state.sortOrder}
           />
-          <div className="movie-gallery">
+          <InfiniteScroll
+            className="movie-gallery"
+            dataLength={this.state.movies.length}
+            next={this.fetchMovies}
+            hasMore={true}
+            loader={<h3>Loading...</h3>}
+          >
             {this.state.movies.map((movie) => (
               <Poster key={movie.id} movie={movie} />
             ))}
-          </div>
+          </InfiniteScroll>
         </div>
       );
     }
