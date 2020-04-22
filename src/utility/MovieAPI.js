@@ -131,3 +131,30 @@ export async function getMovies(order, page) {
 
   throw new Error(res.statusText);
 }
+
+export async function searchMovies(query) {
+  if (query.trim() === "") {
+    return;
+  }
+
+  let request = `https://api.themoviedb.org/3/search/movie?api_key=${key}&language=en-US&query=${query}&page=1`;
+
+  const res = await fetch(request);
+  if (res.status === 200) {
+    const data = await res.json();
+    const results = data.results.map((movie) => {
+      return {
+        id: movie.id,
+        title: movie.title,
+        poster_path:
+          config.images.secure_base_url +
+          config.images.poster_sizes[2] +
+          "/" +
+          movie.poster_path,
+        release_date: movie.release_date,
+      };
+    });
+    return results;
+  }
+  throw new Error(res.statusText);
+}

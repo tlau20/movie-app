@@ -9,12 +9,14 @@ import About from "../components/About";
 import Favourites from "../components/Favourites";
 import Watchlist from "../components/Watchlist";
 import ScrollToTop from "../components/ScrollToTop";
+import Searchbar from "../components/Searchbar";
 
 function AppRouter() {
   return (
     <Router>
       <div className="wrapper">
         <Header />
+        <Searchbar />
         <main>
           <ScrollToTop>
             <Switch>
