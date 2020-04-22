@@ -16,29 +16,27 @@ export async function getMovie(id) {
   const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${key}`;
   const res = await fetch(url);
 
-  // const trailer_url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=a3922856eb59dc0a86a6849412c18182&language=en-US`;
-  // const response = await fetch(trailer_url);
+  const trailer_url = `https://api.themoviedb.org/3/movie/${id}/videos?api_key=a3922856eb59dc0a86a6849412c18182&language=en-US`;
+  const response = await fetch(trailer_url);
 
-  // let trailer = "";
-  // if (response.status === 200) {
-  //   const data = await response.json();
-  //   for (let i = 0; i < data.results.length; i++) {
-  //     if (
-  //       data.results[i].type === "Trailer" &&
-  //       data.results[i].site === "YouTube"
-  //     ) {
-  //       trailer = `https://www.youtube.com/watch?v=${data.results[i].key}`;
-  //       // trailer = data.results[i].key;
-  //     }
-  //   }
-  // }
+  let trailer_id = "";
+  if (response.status === 200) {
+    const data = await response.json();
+    for (let i = 0; i < data.results.length; i++) {
+      if (
+        data.results[i].type === "Trailer" &&
+        data.results[i].site === "YouTube"
+      ) {
+        trailer_id = data.results[i].key;
+      }
+    }
+  }
 
   let similarMovies = [];
   const similar_movies = `https://api.themoviedb.org/3/movie/${id}/similar?api_key=${key}&language=en-US&page=1`;
-  const response = await fetch(similar_movies);
+  const similar_movies_response = await fetch(similar_movies);
   if (response.status === 200) {
-    const data = await response.json();
-    // similarMovies = data.results.splice(0, 10).map((movie) => {
+    const data = await similar_movies_response.json();
     similarMovies = data.results.map((movie) => {
       return {
         id: movie.id,
@@ -80,7 +78,7 @@ export async function getMovie(id) {
         data.poster_path,
       genres: data.genres,
       rating: data.vote_average,
-      // trailer: trailer,
+      trailer_id: trailer_id,
       similar_movies: similarMovies,
     };
     return movie;

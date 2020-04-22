@@ -4,6 +4,7 @@ import { getMovie } from "../utility/MovieAPI";
 import FavButton from "./FavButton";
 import WatchLaterButton from "./WatchLaterButton";
 import Poster from "./Poster";
+import Trailer from "./Trailer";
 
 const Movie = () => {
   let { id } = useParams();
@@ -32,6 +33,11 @@ const Movie = () => {
       </div>
       <div className="poster-wrapper">
         <img src={movie.poster_path} alt={movie.title} />
+        {movie.trailer_id && (
+          <div className="trailer-section">
+            <Trailer id={movie.trailer_id} />
+          </div>
+        )}
       </div>
       <div className="movie-info">
         <div className="movie-header">
