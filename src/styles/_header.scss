@@ -19,7 +19,7 @@ header {
     }
   }
   .navbar {
-    z-index: 1;
+    z-index: 99;
     display: none;
     width: 100%;
     .show & {
