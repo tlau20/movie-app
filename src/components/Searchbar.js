@@ -3,7 +3,7 @@ import { searchMovies } from "../utility/MovieAPI";
 import SearchResult from "./SearchResult";
 
 const Searchbar = () => {
-  const [results, setResults] = useState([]);
+  const [results, setResults] = useState(null);
 
   const getSearchResults = async (e) => {
     const body = document.getElementById("main");
@@ -19,7 +19,7 @@ const Searchbar = () => {
     body.style.opacity = 1;
     e.target.value = "";
     setTimeout(() => {
-      setResults([]);
+      setResults(null);
     }, 100);
   };
 
@@ -32,10 +32,13 @@ const Searchbar = () => {
           onChange={getSearchResults}
         />
       </div>
-      <div className="search-results">
-        {results &&
-          results.map((movie) => <SearchResult key={movie.id} movie={movie} />)}
-      </div>
+      {results && (
+        <div className="search-results">
+          {results.map((movie) => (
+            <SearchResult key={movie.id} movie={movie} />
+          ))}
+        </div>
+      )}
     </div>
   );
 };
