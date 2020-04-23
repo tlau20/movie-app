@@ -68,7 +68,7 @@
     justify-self: flex-end;
     align-self: flex-start;
     padding-right: 6px;
-    padding-top: 6px;
+    padding-top: 4px;
   }
   #similar-movie-heading {
     grid-row: 4 / 5;
@@ -93,19 +93,6 @@
 
 @media (min-width: $tablet) {
   .movie {
-    // .backdrop-wrapper {
-    //   display: block;
-    //   grid-column: 1 / 4;
-    //   grid-row: 1 / 4;
-    //   opacity: 0.2;
-    //   z-index: -1;
-    //   // height: 450px;
-    //   display: flex;
-    //   align-items: flex-end;
-    //   img {
-    //     object-fit: cover;
-    //   }
-    // }
     .movie-info {
       h2 {
         font-size: 2em;
