@@ -18,14 +18,8 @@
     position: absolute;
     left: 0;
     z-index: 90;
-    width: 100%;
     opacity: 1;
-    height: 95vh;
-    overflow-y: scroll;
-    scrollbar-width: none;
     width: 100vw;
-    border-bottom-left-radius: 8px;
-    border-bottom-right-radius: 8px;
     .search-result {
       display: flex;
       align-items: center;
@@ -79,7 +73,7 @@
   .search-container {
     .search-results {
       .search-result {
-        width: inherit;
+        width: 100%;
         max-width: 1600px;
         margin: 0 auto;
       }
