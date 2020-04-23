@@ -22,14 +22,16 @@
     #no-poster {
       width: 300px;
       height: 450px;
+      padding: 0 20px;
       font-size: 2em;
       font-weight: bold;
       text-align: center;
-      color: #696969;
+      background-color: #1f1f1f;
+      color: #888888;
       padding-top: 50%;
       transition: 0.3s ease-out;
       &:hover {
-        color: #969696;
+        color: #c4c4c4;
       }
     }
   }
@@ -56,9 +58,13 @@
 
 @media (min-width: $desktop) {
   .poster {
+    &:hover {
+      box-shadow: 0px 0px 18px rgba(226, 143, 143, 0.4);
+      border-radius: 10px;
+    }
     .posterimg {
       img {
-        filter: grayscale(85%);
+        filter: grayscale(90%);
       }
     }
     .poster-btns {

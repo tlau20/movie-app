@@ -5,6 +5,7 @@
 }
 .infinite-scroll-component,
 .movie-gallery {
+  padding-top: 10px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
   place-items: center;
