@@ -18,7 +18,7 @@
     position: absolute;
     left: 0;
     z-index: 90;
-    width: inherit;
+    width: 100%;
     opacity: 1;
     .search-result {
       width: 100vw;
@@ -72,9 +72,10 @@
 @media (min-width: $desktop) {
   .search-container {
     .search-results {
-      left: 20%;
       .search-result {
-        width: 60vw;
+        width: inherit;
+        max-width: 1600px;
+        margin: 0 auto;
       }
     }
   }
