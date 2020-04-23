@@ -1,10 +1,16 @@
 .search-container {
   width: 50%;
-  margin: 0 auto;
   .searchbar {
     input {
+      height: 30px;
       width: 100%;
+      padding: 0 5px;
+      border-radius: 8px;
       font-style: italic;
+      &:hover,
+      &:focus {
+        background-color: #1f1f1f;
+      }
     }
   }
   .search-results {
@@ -43,7 +49,7 @@
   }
 }
 
-@media (min-width: 750px) {
+@media (min-width: $tablet) {
   .search-container {
     .search-results {
       .search-result {
@@ -62,7 +68,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop) {
   .search-container {
     .search-results {
       left: 20%;

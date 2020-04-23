@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import FavButton from "./FavButton";
 import WatchLaterButton from "./WatchLaterButton";
-import "../styles/_poster.scss";
 
 const Poster = (props) => {
   return (

@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 // import MovieGallery from "../components/MovieGallery";
-import MovieGallery2 from "../components/MovieGallery2";
+import MovieGallery from "../components/MovieGallery";
 import Movie from "../components/Movie";
 import "../styles/style.scss";
 import Header from "../components/Header";
@@ -19,7 +19,7 @@ function AppRouter() {
           <ScrollToTop>
             <Switch>
               <Route path="/" exact>
-                <MovieGallery2 />
+                <MovieGallery />
               </Route>
               <Route path="/movie/:id">
                 <Movie />

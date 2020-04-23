@@ -17,7 +17,7 @@
   }
 }
 
-@media (min-width: 1200px) {
+@media (min-width: $desktop) {
   .sortOrder {
     // justify-content: flex-start;
     // margin: 40px 0;
