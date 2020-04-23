@@ -5,6 +5,11 @@ html {
   color: #fafafa;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
 h1,
 h2,
 h3,
