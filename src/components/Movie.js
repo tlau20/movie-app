@@ -73,7 +73,7 @@ const Movie = () => {
       </div>
 
       {similarMovies.length > 0 && (
-        <h2 id="similar-movie-title">Similar Movies</h2>
+        <h2 id="similar-movie-heading">Similar Movies</h2>
       )}
       {similarMovies.length > 0 ? (
         <div className="movie-gallery similar-movies">

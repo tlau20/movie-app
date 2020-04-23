@@ -2,13 +2,13 @@
   // max-width: 1600px;
   // margin: 0 auto;
   padding-bottom: 20px;
-  .infinite-scroll-component,
-  .movie-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
-    place-items: center;
-    column-gap: 20px;
-    row-gap: 20px;
-    justify-content: center;
-  }
+}
+.infinite-scroll-component,
+.movie-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+  place-items: center;
+  column-gap: 20px;
+  row-gap: 20px;
+  justify-content: center;
 }

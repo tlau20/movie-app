@@ -7,7 +7,8 @@ const Searchbar = () => {
   const [results, setResults] = useState([]);
 
   const getSearchResults = async (e) => {
-    e.preventDefault();
+    const body = document.getElementById("main");
+    body.style.opacity = 0.3;
     const searchResults = await searchMovies(e.target.value).catch((error) => {
       console.log(error);
     });
@@ -15,6 +16,8 @@ const Searchbar = () => {
   };
 
   const clearSearch = (e) => {
+    const body = document.getElementById("main");
+    body.style.opacity = 1;
     e.target.value = "";
     setTimeout(() => {
       setResults([]);

@@ -15,7 +15,7 @@ function AppRouter() {
     <Router>
       <div className="wrapper">
         <Header />
-        <main>
+        <main id="main">
           <ScrollToTop>
             <Switch>
               <Route path="/" exact>
