@@ -1,8 +1,8 @@
 .search-container {
-  width: 800px;
-  margin: 40px auto;
+  width: 50%;
+  margin: 0 auto;
   .searchbar {
-    border-bottom: 1px solid #979797;
+    // border-bottom: 1px solid #979797;
     input {
       width: 100%;
     }
@@ -22,6 +22,7 @@
       }
       .result-poster {
         width: 100px;
+        min-width: 100px;
       }
       .result-details {
         margin-left: 20px;

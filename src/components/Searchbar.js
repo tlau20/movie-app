@@ -18,7 +18,7 @@ const Searchbar = () => {
     e.target.value = "";
     setTimeout(() => {
       setResults([]);
-    }, 100);
+    }, 50);
   };
 
   return (

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import Searchbar from "../components/Searchbar";
 
 const Header = () => {
   const toggleMenu = (_) => {
@@ -17,6 +18,7 @@ const Header = () => {
       <div className="logo">
         <NavLink to="/">What's That?</NavLink>
       </div>
+      <Searchbar />
       <div className="menu-btn" onClick={toggleMenu}>
         <img src="/images/menu.png" alt="burger menu icon" />
       </div>
