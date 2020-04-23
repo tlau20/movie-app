@@ -37,46 +37,19 @@
       }
     }
   }
-  .trailer-container {
-    grid-column: 1 / 2;
-    grid-row: 2 / 3;
-    z-index: 90;
-    justify-self: flex-end;
-    align-self: flex-end;
-    padding-right: 6px;
-    padding-bottom: 6px;
-    width: 40px;
-    cursor: pointer;
-    // filter: grayscale(80%);
-    transition: 0.3s ease-out;
-    &:hover {
-      filter: grayscale(0);
-    }
-    .modal-video-body {
-      width: 800px;
-      z-index: 99;
-      position: fixed;
-      top: 15px;
-      left: 15px;
-      width: 800px;
-    }
-  }
 }
 
 @media (min-width: 1200px) {
   .poster {
     .posterimg {
       img {
-        filter: grayscale(80%);
+        filter: grayscale(85%);
       }
     }
     .poster-btns {
       .interactive-btn {
         filter: grayscale(70%);
       }
-    }
-    .trailer-container {
-      filter: grayscale(80%);
     }
   }
 }

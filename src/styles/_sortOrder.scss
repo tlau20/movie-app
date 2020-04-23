@@ -19,10 +19,14 @@
 
 @media (min-width: 1200px) {
   .sortOrder {
-    justify-content: flex-start;
+    // justify-content: flex-start;
     // margin: 40px 0;
     ul li {
       font-size: 1.5em;
+      &:hover {
+        transition: 0.3s ease-out;
+        color: $brand-color;
+      }
     }
   }
 }

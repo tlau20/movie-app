@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { searchMovies } from "../utility/MovieAPI";
 import SearchResult from "./SearchResult";
-import { Redirect } from "react-router-dom";
 
 const Searchbar = () => {
   const [results, setResults] = useState([]);
@@ -21,7 +20,7 @@ const Searchbar = () => {
     e.target.value = "";
     setTimeout(() => {
       setResults([]);
-    }, 50);
+    }, 100);
   };
 
   return (

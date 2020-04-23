@@ -16,7 +16,7 @@ const Header = () => {
   return (
     <header>
       <div className="logo">
-        <NavLink to="/">What's That?</NavLink>
+        <NavLink to="/">WT</NavLink>
       </div>
       <Searchbar />
       <div className="menu-btn" onClick={toggleMenu}>
@@ -25,13 +25,19 @@ const Header = () => {
       <nav className="navbar">
         <ul>
           <li>
-            <NavLink to="/favourites">Favourites</NavLink>
+            <NavLink to="/favourites" onClick={toggleMenu}>
+              Favourites
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/watchlist">Watchlist</NavLink>
+            <NavLink to="/watchlist" onClick={toggleMenu}>
+              Watchlist
+            </NavLink>
           </li>
           <li>
-            <NavLink to="/about">About</NavLink>
+            <NavLink to="/about" onClick={toggleMenu}>
+              About
+            </NavLink>
           </li>
         </ul>
       </nav>

@@ -8,6 +8,7 @@ header {
   .logo {
     padding-left: 20px;
     a {
+      font-weight: bold;
       display: block;
     }
   }
@@ -30,7 +31,14 @@ header {
       position: absolute;
       li {
         padding-left: 20px;
-        background-color: #333;
+        background-color: #1f1f1f;
+        a.active {
+          color: $brand-color;
+        }
+        &:hover {
+          color: $brand-color;
+          transition: 0.3s ease-out;
+        }
       }
     }
   }
