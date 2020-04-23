@@ -17,9 +17,12 @@
   .search-results {
     position: absolute;
     left: 0;
+    width: 100%;
     z-index: 90;
     opacity: 1;
-    width: 100vw;
+    max-height: 75vh;
+    overflow-y: scroll;
+    scrollbar-width: none;
     .search-result {
       display: flex;
       align-items: center;
