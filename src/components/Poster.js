@@ -6,10 +6,13 @@ import WatchLaterButton from "./WatchLaterButton";
 const Poster = (props) => {
   return (
     <div key={props.movie.id} className="poster">
-      <h2>{props.movie.trailer_id}</h2>
       <div className="posterimg">
         <Link to={"/movie/" + props.movie.id}>
-          <img src={props.movie.poster_path} alt={props.movie.title} />
+          {props.movie.poster_path.includes("null") ? (
+            <h2 id="no-poster">{props.movie.title}</h2>
+          ) : (
+            <img src={props.movie.poster_path} alt={props.movie.title} />
+          )}
         </Link>
       </div>
       <div className="poster-btns">

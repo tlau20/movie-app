@@ -1,6 +1,6 @@
 .poster {
   display: grid;
-  grid-template-columns: auto;
+  grid-template-columns: 300px;
   grid-template-rows: 100px auto;
   transition: 0.4s ease-out;
   &:hover {
@@ -9,13 +9,28 @@
   .posterimg {
     grid-column: 1 / 2;
     grid-row: 1 / 3;
+    max-height: 450px;
+    overflow: hidden;
+    border-radius: 10px;
     img {
-      border-radius: 10px;
-      // filter: grayscale(80%);
       transition: 0.4s ease-out;
+      object-fit: cover;
     }
     &:hover img {
       filter: grayscale(0);
+    }
+    #no-poster {
+      width: 300px;
+      height: 450px;
+      font-size: 2em;
+      font-weight: bold;
+      text-align: center;
+      color: #696969;
+      padding-top: 50%;
+      transition: 0.3s ease-out;
+      &:hover {
+        color: #969696;
+      }
     }
   }
   .poster-btns {
