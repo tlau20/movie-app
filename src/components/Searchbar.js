@@ -14,13 +14,11 @@ const Searchbar = () => {
     setResults(searchResults);
   };
 
-  const resetSearch = () => {
-    setResults([]);
-  };
-
-  //not working 100%
   const clearSearch = (e) => {
     e.target.value = "";
+    setTimeout(() => {
+      setResults([]);
+    }, 100);
   };
 
   return (
@@ -34,13 +32,7 @@ const Searchbar = () => {
       </div>
       <div className="search-results">
         {results &&
-          results.map((movie) => (
-            <SearchResult
-              key={movie.id}
-              movie={movie}
-              resetSearch={resetSearch}
-            />
-          ))}
+          results.map((movie) => <SearchResult key={movie.id} movie={movie} />)}
       </div>
     </div>
   );

@@ -3,11 +3,7 @@ import { Link } from "react-router-dom";
 
 const SearchResult = (props) => {
   return (
-    <Link
-      to={"/movie/" + props.movie.id}
-      className="search-result"
-      onClick={props.resetSearch}
-    >
+    <Link to={"/movie/" + props.movie.id} className="search-result">
       <div className="result-poster">
         <img src={props.movie.poster_path} alt={props.movie.title} />
       </div>
