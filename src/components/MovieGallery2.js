@@ -8,6 +8,7 @@ import {
 import SortOrder from "./SortOrder.js";
 import Poster from "./Poster.js";
 import InfiniteScroll from "react-infinite-scroll-component";
+import ModalVideo from "react-modal-video";
 
 class MovieGallery2 extends Component {
   state = {

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { searchMovies } from "../utility/MovieAPI";
 import SearchResult from "./SearchResult";
+import { Redirect } from "react-router-dom";
 
 const Searchbar = () => {
   const [results, setResults] = useState([]);

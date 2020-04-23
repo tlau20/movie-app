@@ -4,17 +4,18 @@ import FavButton from "./FavButton";
 import WatchLaterButton from "./WatchLaterButton";
 import "../styles/_poster.scss";
 
-const Poster = ({ movie }) => {
+const Poster = (props) => {
   return (
-    <div key={movie.id} className="poster">
+    <div key={props.movie.id} className="poster">
+      <h2>{props.movie.trailer_id}</h2>
       <div className="posterimg">
-        <Link to={"/movie/" + movie.id}>
-          <img src={movie.poster_path} alt={movie.title} />
+        <Link to={"/movie/" + props.movie.id}>
+          <img src={props.movie.poster_path} alt={props.movie.title} />
         </Link>
       </div>
       <div className="poster-btns">
-        <FavButton movie={movie} />
-        <WatchLaterButton movie={movie} />
+        <FavButton movie={props.movie} />
+        <WatchLaterButton movie={props.movie} />
       </div>
     </div>
   );
