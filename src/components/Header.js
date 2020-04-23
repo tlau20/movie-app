@@ -13,8 +13,19 @@ const Header = () => {
     }
   });
 
+  let Y = window.pageYOffset;
+  window.onscroll = function () {
+    let currentY = window.pageYOffset;
+    if (Y > currentY) {
+      document.getElementById("header").style.top = "0";
+    } else {
+      document.getElementById("header").style.top = "-50px";
+    }
+    Y = currentY;
+  };
+
   return (
-    <header>
+    <header id="header">
       <div className="logo">
         <NavLink to="/">WT</NavLink>
       </div>
