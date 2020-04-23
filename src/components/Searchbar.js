@@ -28,7 +28,7 @@ const Searchbar = () => {
       <div className="searchbar" onBlur={clearSearch}>
         <input
           type="text"
-          placeholder="Search for movies..."
+          placeholder="Search movies..."
           onChange={getSearchResults}
         />
       </div>
