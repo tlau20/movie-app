@@ -16,7 +16,8 @@ header {
   .logo {
     padding-left: 20px;
     a {
-      font-weight: bold;
+      // font-weight: bold;
+      font-size: 1.5em;
       display: block;
     }
   }
@@ -39,13 +40,14 @@ header {
       position: absolute;
       li {
         padding-left: 20px;
-        background-color: #1f1f1f;
+        background-color: $dark-grey;
+        text-align: center;
         a.active {
           color: $brand-color;
+          background-color: $light-grey;
         }
         &:hover {
-          color: $brand-color;
-          transition: 0.3s ease-out;
+          background-color: $light-grey;
         }
       }
     }
@@ -54,21 +56,31 @@ header {
 //desktop styles
 @media (min-width: $desktop) {
   header {
-    flex-wrap: nowrap;
+    // flex-wrap: nowrap;
     .navbar {
-      display: flex;
-      width: min-content;
+      // display: flex;
+      // width: min-content;
       ul {
-        display: flex;
-        position: relative;
+        // display: flex;
+        // position: relative;
         li {
-          padding: 0 20px;
-          background-color: transparent;
+          padding-left: 0;
+          // padding: 0 20px;
+          // background-color: transparent;
+          text-align: right;
+          transition: 0.1s;
+          a {
+            padding-right: 20px;
+          }
+          &:hover {
+            font-size: 1.3em;
+            color: $brand-color;
+          }
         }
       }
     }
-    .menu-btn {
-      display: none;
-    }
+    // .menu-btn {
+    //   display: none;
+    // }
   }
 }

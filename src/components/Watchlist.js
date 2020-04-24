@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Poster from "../components/Poster";
 
 const Watchlist = () => {
@@ -14,7 +15,11 @@ const Watchlist = () => {
   return (
     <div>
       {list === null ? (
-        <h2>Watchlist is empty</h2>
+        <div className="empty-list">
+          <Link to="/">
+            <h2>Your watchlist is empty! Click me to go back to movies</h2>
+          </Link>
+        </div>
       ) : (
         <div className="movie-grid-wrapper">
           <div className="movie-gallery">

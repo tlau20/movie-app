@@ -7,21 +7,29 @@ const Header = () => {
     document.body.classList.toggle("show");
   };
 
-  window.addEventListener("resize", function () {
-    if (window.innerWidth >= 1200) {
-      document.body.classList.remove("show");
-    }
-  });
+  window.onload = function () {
+    // window.addEventListener("resize", function () {
+    //   if (window.innerWidth >= 1200) {
+    //     document.body.classList.remove("show");
+    //   }
+    // });
 
-  let prevScrollpos = window.pageYOffset;
-  window.onscroll = function () {
-    let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos) {
-      document.getElementById("header").style.top = "0";
-    } else {
-      document.getElementById("header").style.top = "-50px";
-    }
-    prevScrollpos = currentScrollPos;
+    let prevScrollpos = window.pageYOffset;
+    window.onscroll = function () {
+      let currentScrollPos = window.pageYOffset;
+      if (prevScrollpos > currentScrollPos) {
+        document.getElementById("header").style.top = "0";
+      } else {
+        document.getElementById("header").style.top = "-50px";
+      }
+      prevScrollpos = currentScrollPos;
+    };
+
+    document.getElementById("main").addEventListener("click", function () {
+      if (document.body.classList.contains("show")) {
+        document.body.classList.remove("show");
+      }
+    });
   };
 
   return (

@@ -4,15 +4,26 @@
   justify-content: center;
   ul {
     display: flex;
+    align-items: center;
     li {
       padding: 0 20px;
       cursor: pointer;
-      color: #a8a8a8;
+      color: lighten($light-grey, 35%);
       font-family: "PT Sans", sans-serif !important;
       font-size: 1em;
-      &.active {
+      transition: 0.15s ease-in;
+      &.active,
+      &:hover {
         color: $brand-color;
       }
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .sortOrder {
+    ul li {
+      font-size: 1.5em;
     }
   }
 }
@@ -22,11 +33,8 @@
     // justify-content: flex-start;
     // margin: 40px 0;
     ul li {
-      font-size: 1.5em;
-      &:hover {
-        transition: 0.3s ease-out;
-        color: $brand-color;
-      }
+      font-size: 2em;
+      padding: 0 40px;
     }
   }
 }

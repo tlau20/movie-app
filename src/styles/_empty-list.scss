@@ -1,0 +1,13 @@
+.empty-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 60%;
+  margin: 0 auto;
+  h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+    text-shadow: 2px 2px $brand-color;
+  }
+}

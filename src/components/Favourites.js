@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import Poster from "../components/Poster";
 
 const Favourites = () => {
@@ -14,7 +15,11 @@ const Favourites = () => {
   return (
     <div>
       {favs === null ? (
-        <h2>No favourites</h2>
+        <div className="empty-list">
+          <Link to="/">
+            <h2>You have no favourites! Click me to go back to movies</h2>
+          </Link>
+        </div>
       ) : (
         <div className="movie-grid-wrapper">
           <div className="movie-gallery">

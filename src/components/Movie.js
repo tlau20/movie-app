@@ -58,7 +58,11 @@ const Movie = () => {
           <p>{movie.release_date}</p> */}
         </div>
         <div className="movie-overview">
-          {movie.tagline ? <p>- {movie.tagline} -</p> : ""}
+          {movie.tagline ? (
+            <p className="movie-tagline">- {movie.tagline} -</p>
+          ) : (
+            ""
+          )}
           <p>{movie.overview}</p>
         </div>
         {/* <p>{movie.release_date}</p>
