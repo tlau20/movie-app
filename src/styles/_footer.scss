@@ -1,0 +1,14 @@
+footer {
+  opacity: 0.5;
+  font-size: 0.8em;
+  color: lighten($dark-grey, 20%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 90%;
+  max-width: 1580px;
+  padding: 30px 20px;
+  border-top: 1px solid $dark-grey;
+  margin: 0 auto;
+  margin-top: 20px;
+}
