@@ -23,9 +23,9 @@
     opacity: 1;
     max-height: 75vh;
     overflow-y: scroll;
-    scrollbar-width: none;
     border-bottom-right-radius: 8px;
     border-bottom-left-radius: 8px;
+    scrollbar-width: thin;
     .search-result {
       display: flex;
       align-items: center;

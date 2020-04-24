@@ -59,7 +59,7 @@ const Movie = () => {
         </div>
         <div className="movie-overview">
           {movie.tagline ? (
-            <p className="movie-tagline">- {movie.tagline} -</p>
+            <p className="movie-tagline">{movie.tagline}</p>
           ) : (
             ""
           )}
