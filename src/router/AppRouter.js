@@ -10,6 +10,7 @@ import Favourites from "../components/Favourites";
 import Watchlist from "../components/Watchlist";
 import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/Footer";
+import BackToTopButton from "../components/BackToTopButton";
 
 function AppRouter() {
   return (
@@ -37,6 +38,7 @@ function AppRouter() {
             </Switch>
           </ScrollToTop>
         </main>
+        <BackToTopButton />
         <Footer />
       </div>
     </Router>

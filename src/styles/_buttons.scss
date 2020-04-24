@@ -12,3 +12,15 @@
 .like-btn {
   margin-bottom: 5px;
 }
+
+.back-to-top-btn {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+  cursor: pointer;
+  img {
+    width: 40px;
+  }
+}

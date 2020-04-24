@@ -81,6 +81,8 @@
     border-top: 1px solid #222222;
     padding-top: 30px;
     padding-bottom: 30px;
+    font-family: "Roboto Slab", serif;
+    color: darken(#fafafa, 10%);
   }
   .similar-movies {
     grid-row: 5 / 6;
@@ -225,17 +227,10 @@
     #similar-movie-heading {
       grid-row: 5 / 6;
       grid-column: 1 / 4;
-      font-size: 2em;
-      // background-color: $brand-color;
-      // border-radius: 8px;
-      // margin: 0 auto;
-      // padding: 20px 40px;
+      font-size: 2.5em;
       padding-top: 60px;
       padding-left: 20px;
       margin-bottom: 40px;
-      font-weight: 500;
-      // width: 100%;
-      // text-align: left;
     }
     .similar-movies {
       grid-row: 6 / 7;
