@@ -8,12 +8,6 @@ const Header = () => {
   };
 
   window.onload = function () {
-    // window.addEventListener("resize", function () {
-    //   if (window.innerWidth >= 1200) {
-    //     document.body.classList.remove("show");
-    //   }
-    // });
-
     let prevScrollpos = window.pageYOffset;
     window.onscroll = function () {
       let currentScrollPos = window.pageYOffset;
@@ -23,6 +17,16 @@ const Header = () => {
         document.getElementById("header").style.top = "-50px";
       }
       prevScrollpos = currentScrollPos;
+
+      const scrollToTopBtn = document.getElementById("scroll-to-top-btn");
+      if (
+        document.body.scrollTop > 600 ||
+        document.documentElement.scrollTop > 600
+      ) {
+        scrollToTopBtn.style.display = "block";
+      } else {
+        scrollToTopBtn.style.display = "none";
+      }
     };
 
     document.getElementById("main").addEventListener("click", function () {
