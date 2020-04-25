@@ -12,7 +12,10 @@ const BackToTopButton = () => {
       onClick={scrollToTop}
       id="scroll-to-top-btn"
     >
-      <img src="/images/up-arrow.png" alt="back to top button" />
+      <div className="back-to-top-content">
+        <h3>Back to top</h3>
+        <img src="/images/up-arrow.png" alt="back to top button" />
+      </div>
     </div>
   );
 };

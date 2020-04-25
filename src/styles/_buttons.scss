@@ -20,7 +20,18 @@
   right: 20px;
   z-index: 999;
   cursor: pointer;
-  img {
-    width: 40px;
+  .back-to-top-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h3 {
+      margin-bottom: 8px;
+      font-size: 1em;
+      color: $brand-color;
+    }
+    img {
+      width: 40px;
+    }
   }
 }
