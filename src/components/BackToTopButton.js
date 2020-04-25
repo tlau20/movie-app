@@ -13,7 +13,7 @@ const BackToTopButton = () => {
       id="scroll-to-top-btn"
     >
       <div className="back-to-top-content">
-        <h3>Back to top</h3>
+        <h3>Top</h3>
         <img src="/images/up-arrow.png" alt="back to top button" />
       </div>
     </div>

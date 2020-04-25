@@ -1,0 +1,29 @@
+.about-us-page {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px;
+  line-height: 1.3em;
+  .about-us-content {
+    margin-bottom: 40px;
+    h2 {
+      font-size: 2em;
+      font-weight: bold;
+      text-shadow: 2px 2px $brand-color;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: 1.3em;
+    }
+  }
+  .credits {
+    display: flex;
+    flex-direction: column;
+    img {
+      margin-top: 10px;
+      width: 60px;
+    }
+  }
+}
