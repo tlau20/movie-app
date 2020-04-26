@@ -17,7 +17,7 @@ const Favourites = () => {
       {favs === null ? (
         <div className="empty-list">
           <Link to="/">
-            <h2>You have no favourites! Click me to go back to movies</h2>
+            <h2>You have no favourites. Click me to go add some!</h2>
           </Link>
         </div>
       ) : (
