@@ -13,7 +13,7 @@ const Watchlist = () => {
   }, []);
 
   return (
-    <div>
+    <div className="list-page">
       {list === null ? (
         <div className="empty-list">
           <Link to="/">
@@ -29,6 +29,7 @@ const Watchlist = () => {
           </div>
         </div>
       )}
+      {list === null && <div className="empty-list-bg"></div>}
     </div>
   );
 };

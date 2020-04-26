@@ -11,3 +11,37 @@
     text-shadow: 2px 2px $brand-color;
   }
 }
+
+@media (min-width: $tablet) {
+  .empty-list {
+    h2 {
+      font-size: 3.5em;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .empty-list {
+    h2 {
+      font-size: 5em;
+      text-shadow: 3px 3px $brand-color;
+      text-align: center;
+    }
+  }
+  .list-page {
+    position: relative;
+    .empty-list-bg {
+      border-radius: 8px;
+      opacity: 0.4;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url("https://media.giphy.com/media/g01ZnwAUvutuK8GIQn/source.gif");
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: -1;
+    }
+  }
+}

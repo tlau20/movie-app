@@ -13,7 +13,7 @@ const Favourites = () => {
   }, []);
 
   return (
-    <div>
+    <div className="list-page">
       {favs === null ? (
         <div className="empty-list">
           <Link to="/">
@@ -29,6 +29,7 @@ const Favourites = () => {
           </div>
         </div>
       )}
+      {favs === null && <div className="empty-list-bg"></div>}
     </div>
   );
 };
