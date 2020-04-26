@@ -1,11 +1,14 @@
 .about-us-page {
-  width: 100%;
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
   min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   padding: 0 40px;
   line-height: 1.3em;
+
   .about-us-content {
     margin-bottom: 40px;
     h2 {
@@ -15,15 +18,82 @@
       margin-bottom: 20px;
     }
     p {
-      font-size: 1.3em;
+      font-size: 1.2em;
     }
   }
   .credits {
     display: flex;
     flex-direction: column;
+    font-size: 0.9em;
     img {
       margin-top: 10px;
       width: 60px;
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+  .about-us-page {
+    .about-us-content {
+      h2 {
+        font-size: 2.5em;
+      }
+      p {
+        font-size: 1.5em;
+      }
+    }
+    .credits {
+      font-size: 1em;
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .about-us-page {
+    width: 100%;
+    line-height: 1.7em;
+    .about-us-content {
+      width: 60%;
+      margin: 0 auto;
+      h2 {
+        font-size: 3.5em;
+        margin-bottom: 40px;
+        text-shadow: 3px 3px $brand-color;
+      }
+      p {
+        font-size: 1.7em;
+      }
+    }
+    .credits {
+      width: 60%;
+      margin: 0 auto;
+      margin-top: 40px;
+    }
+    .about-us-bg {
+      border-radius: 8px;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      opacity: 0.2;
+      background-image: url("https://media.giphy.com/media/Y3xF7h9cvxmPC/source.gif"),
+        url("https://media.giphy.com/media/XXo6LQ3Ujyy2s/source.gif"),
+        url("https://media.giphy.com/media/3ohzdPqMBCvOQFKFbi/source.gif"),
+        url("https://media.giphy.com/media/3o7TKyH7Ur3kvjGa5y/source.gif"),
+        url("https://media.giphy.com/media/KdvwPCNi79YDM7rsjI/source.gif"),
+        url("https://media.giphy.com/media/xULW8HsxwLlkNpiRUY/source.gif"),
+        url("https://media.giphy.com/media/MCKeCX4LhFkvWSngpA/source.gif"),
+        url("https://media.giphy.com/media/MBy4Bt8MDqoo2zY34D/giphy.gif"),
+        url("https://media.giphy.com/media/HBUgSaIGVQLDy/source.gif"),
+        url("https://media.giphy.com/media/l3q2QXNEUTig2TqtG/source.gif"),
+        url("https://media.giphy.com/media/WVGMYFOVHulD2DPJNO/source.gif"),
+        url("https://media.giphy.com/media/s6aVykwa8gFLW/source.gif");
+      background-repeat: no-repeat;
+      background-position: 0% 0%, 33.34% 0%, 66.67% 0%, 100% 0%, 0% 50%,
+        33.34% 50%, 66.67% 50%, 100% 50%, 0% 100%, 33.34% 100%, 66.67% 100%,
+        100% 100%;
+      background-size: 25% 33.34%, 25% 33.34%, 25% 33.4%, 25% 33.4%;
     }
   }
 }

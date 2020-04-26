@@ -17,6 +17,7 @@ const About = () => {
         </p>
         <img src="/images/tmdb-logo.svg" alt="tmdb logo" />
       </div>
+      <div className="about-us-bg"></div>
     </div>
   );
 };
