@@ -29,10 +29,20 @@ const Movie = () => {
   return (
     <div className="movie">
       <div className="backdrop-wrapper">
-        <img src={movie.backdrop_path} alt={movie.title} />
+        {movie.backdrop_path && movie.backdrop_path.includes("null") ? (
+          <img src="/images/no-backdrop.jpg" alt="no backdrop" />
+        ) : (
+          <img src={movie.backdrop_path} alt={movie.title} />
+        )}
       </div>
       <div className="poster-wrapper">
-        <img src={movie.poster_path} alt={movie.title} />
+        {movie.poster_path && movie.poster_path.includes("null") ? (
+          <div className="no-poster">
+            <h3>{movie.title}</h3>
+          </div>
+        ) : (
+          <img src={movie.poster_path} alt={movie.title} />
+        )}
         {movie.trailer_id && (
           <div className="trailer-section">
             <Trailer id={movie.trailer_id} />
@@ -54,22 +64,11 @@ const Movie = () => {
             min&nbsp;&nbsp;|&nbsp;&nbsp;{genres.join(", ")}
             &nbsp;&nbsp;|&nbsp;&nbsp;{movie.release_date}
           </p>
-          {/* <p>{genres.join(", ")}</p>
-          <p>{movie.release_date}</p> */}
         </div>
         <div className="movie-overview">
-          {movie.tagline ? (
-            <p className="movie-tagline">{movie.tagline}</p>
-          ) : (
-            ""
-          )}
+          {movie.tagline && <p className="movie-tagline">{movie.tagline}</p>}
           <p>{movie.overview}</p>
         </div>
-        {/* <p>{movie.release_date}</p>
-      <p>{movie.budget}</p>
-    <p>{movie.revenue}</p> */}
-        {/* <div className="fav-watchlist-btn"></div> */}
-        {/* <Link to="/">Back to Movies</Link> */}
       </div>
       <div className="movie-btns">
         <FavButton movie={movie} />
