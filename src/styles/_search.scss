@@ -32,13 +32,15 @@
       background-color: $dark-grey;
       padding: 10px 10px;
       border-top: 1px solid #979797;
-
       &:hover {
         background-color: $light-grey;
       }
       .result-poster {
         width: 100px;
         min-width: 100px;
+        .result-no-poster {
+          text-align: center;
+        }
       }
       .result-details {
         margin-left: 20px;

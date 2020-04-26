@@ -5,7 +5,13 @@ const SearchResult = (props) => {
   return (
     <Link to={"/movie/" + props.movie.id} className="search-result">
       <div className="result-poster">
-        <img src={props.movie.poster_path} alt={props.movie.title} />
+        {props.movie.poster_path && props.movie.poster_path.includes("null") ? (
+          <div className="result-no-poster">
+            <h2>No poster</h2>
+          </div>
+        ) : (
+          <img src={props.movie.poster_path} alt={props.movie.title} />
+        )}
       </div>
       <div className="result-details">
         <div className="result-title">
