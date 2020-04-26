@@ -1,0 +1,28 @@
+.page-not-found {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  h2 {
+    font-size: 3em;
+  }
+  p {
+    font-size: 1.3em;
+  }
+  .page-not-found-bg {
+    border-radius: 8px;
+    z-index: -1;
+    opacity: 0.3;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("https://media.giphy.com/media/l2JJKs3I69qfaQleE/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+}

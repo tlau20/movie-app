@@ -11,6 +11,7 @@ import Watchlist from "../components/Watchlist";
 import ScrollToTop from "../components/ScrollToTop";
 import Footer from "../components/Footer";
 import BackToTopButton from "../components/BackToTopButton";
+import PageNotFound from "../components/PageNotFound";
 
 function AppRouter() {
   return (
@@ -23,17 +24,20 @@ function AppRouter() {
               <Route path="/" exact>
                 <MovieGallery />
               </Route>
-              <Route path="/movie/:id">
+              <Route path="/movie/:id" exact>
                 <Movie />
               </Route>
-              <Route path="/about">
+              <Route path="/about" exact>
                 <About />
               </Route>
-              <Route path="/favourites">
+              <Route path="/favourites" exact>
                 <Favourites />
               </Route>
-              <Route path="/watchlist">
+              <Route path="/watchlist" exact>
                 <Watchlist />
+              </Route>
+              <Route>
+                <PageNotFound />
               </Route>
             </Switch>
           </ScrollToTop>
