@@ -10,6 +10,7 @@
 
 # production
 /build
+/movie-app
 
 # misc
 .DS_Store
