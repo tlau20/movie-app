@@ -22,6 +22,7 @@ const Favourites = () => {
         </div>
       ) : (
         <div className="movie-grid-wrapper">
+          <h2 className="list-title">Favourites</h2>
           <div className="movie-gallery">
             {favs.map((movie) => (
               <Poster key={movie.id} movie={movie} />

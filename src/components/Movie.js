@@ -67,7 +67,7 @@ const Movie = () => {
         </div>
         <div className="movie-overview">
           {movie.tagline && <p className="movie-tagline">{movie.tagline}</p>}
-          <p>{movie.overview}</p>
+          <p className="overview-text">{movie.overview}</p>
         </div>
       </div>
       <div className="movie-btns">

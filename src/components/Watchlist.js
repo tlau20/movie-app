@@ -22,6 +22,7 @@ const Watchlist = () => {
         </div>
       ) : (
         <div className="movie-grid-wrapper">
+          <h2 className="list-title">Watchlist</h2>
           <div className="movie-gallery">
             {list.map((movie) => (
               <Poster key={movie.id} movie={movie} />

@@ -29,6 +29,8 @@
       h3 {
         margin-top: 40%;
         font-size: 1.5em;
+        text-align: center;
+        padding: 0 20px;
       }
     }
   }
@@ -38,9 +40,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.8em;
+    font-size: 1em;
     h2 {
-      font-size: 1.5em;
+      font-size: 1.6em;
     }
     .movie-header {
       display: flex;
@@ -72,6 +74,9 @@
         margin-bottom: 10px;
         text-align: center;
         font-style: italic;
+      }
+      .overview-text {
+        color: #696969;
       }
     }
   }
@@ -117,6 +122,7 @@
     }
     .movie-info {
       font-size: 1em;
+      max-width: 90%;
       h2 {
         font-size: 2em;
       }
