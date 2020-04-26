@@ -4,8 +4,10 @@ import {
   removeFromStorage,
   addToStorage,
 } from "../utility/Utilities";
+import LikeButton from "../images/like.png";
+import UnlikeButton from "../images/unlike.png";
 
-const FavButton = ({ movie }) => {
+const FavButton = ({ movie, single }) => {
   const [isFav, setFav] = useState(false);
 
   useEffect(() => {
@@ -26,7 +28,7 @@ const FavButton = ({ movie }) => {
   return (
     <div className="interactive-btn like-btn">
       <img
-        src={isFav ? "/images/like.png" : "/images/unlike.png"}
+        src={isFav ? LikeButton : UnlikeButton}
         alt="heart"
         onClick={handleClick}
       />

@@ -5,6 +5,7 @@ import FavButton from "./FavButton";
 import WatchLaterButton from "./WatchLaterButton";
 import Poster from "./Poster";
 import Trailer from "./Trailer";
+import BackdropFiller from "../images/no-backdrop.jpg";
 
 const Movie = () => {
   let { id } = useParams();
@@ -30,7 +31,7 @@ const Movie = () => {
     <div className="movie">
       <div className="backdrop-wrapper">
         {movie.backdrop_path && movie.backdrop_path.includes("null") ? (
-          <img src="/images/no-backdrop.jpg" alt="no backdrop" />
+          <img src={BackdropFiller} alt="no backdrop" />
         ) : (
           <img src={movie.backdrop_path} alt={movie.title} />
         )}
@@ -71,6 +72,7 @@ const Movie = () => {
         </div>
       </div>
       <div className="movie-btns">
+        {/* <FavButton movie={movie} single={true} /> */}
         <FavButton movie={movie} />
         <WatchLaterButton movie={movie} />
       </div>

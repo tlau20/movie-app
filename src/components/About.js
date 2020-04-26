@@ -1,4 +1,5 @@
 import React from "react";
+import TMDBLogo from "../images/tmdb-logo.svg";
 
 const About = () => {
   return (
@@ -15,7 +16,7 @@ const About = () => {
           This product uses the TMDb API but is not endorsed or certified by
           TMDb.
         </p>
-        <img src="/images/tmdb-logo.svg" alt="tmdb logo" />
+        <img src={TMDBLogo} alt="tmdb logo" />
       </div>
       <div className="about-us-bg"></div>
     </div>

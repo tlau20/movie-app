@@ -1,4 +1,5 @@
 import React from "react";
+import ToTopButton from "../images/up-arrow.png";
 
 const BackToTopButton = () => {
   const scrollToTop = () => {
@@ -14,7 +15,7 @@ const BackToTopButton = () => {
     >
       <div className="back-to-top-content">
         <h3>Top</h3>
-        <img src="/images/up-arrow.png" alt="back to top button" />
+        <img src={ToTopButton} alt="back to top button" />
       </div>
     </div>
   );

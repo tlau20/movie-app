@@ -4,6 +4,8 @@ import {
   removeFromStorage,
   addToStorage,
 } from "../utility/Utilities";
+import AddButton from "../images/add.png";
+import RemoveButton from "../images/remove.png";
 
 const WatchLaterButton = ({ movie }) => {
   const storage = "watchlater";
@@ -26,10 +28,7 @@ const WatchLaterButton = ({ movie }) => {
 
   return (
     <div className="interactive-btn" onClick={handleClick}>
-      <img
-        src={watchLater ? "/images/remove.png" : "/images/add.png"}
-        alt="watchlist"
-      />
+      <img src={watchLater ? RemoveButton : AddButton} alt="watchlist" />
     </div>
   );
 };

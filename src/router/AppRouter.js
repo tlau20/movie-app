@@ -15,7 +15,7 @@ import PageNotFound from "../components/PageNotFound";
 
 function AppRouter() {
   return (
-    <Router>
+    <Router basename="/movie-app">
       <div className="wrapper">
         <Header />
         <main id="main">

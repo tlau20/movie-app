@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ModalVideo from "react-modal-video";
+import PlayButton from "../images/play-button.png";
 
 const Trailer = ({ id }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -17,7 +18,7 @@ const Trailer = ({ id }) => {
         onClose={() => setIsOpen(false)}
       />
       <div className="trailer-btn" onClick={openVideo}>
-        <img src="/images/play-button.png" alt="play button" />
+        <img src={PlayButton} alt="play button" />
         <h3>Play Trailer</h3>
       </div>
     </div>
